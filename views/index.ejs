@@ -1,0 +1,48 @@
+<h1>All the puppers</h1>
+
+<!-- <img src="corgi.jpg" height= '400px' width='auto' />
+<img src="samoyed.jpeg" height= '400px' width='auto' />
+<img src="stbernard.jpg" height= '400px' width='auto' />
+<img src="golden.jpg" height= '400px' width='auto' />
+<img src="sploot.jpg" height= '400px' width='auto' />
+<img src="chow.jpg" height= '400px' width='auto' /> -->
+
+<style>
+    th, table, tr, td, tr {
+        border: 1px black solid;
+    }
+
+    td {
+        padding-left: 2%;
+    }
+    a {
+        display: inline-block;
+    }
+
+    form {
+        display: inline-block;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let i=0; i<puppers.length; i++) { %>
+            <tr>
+                <td><%= puppers[i].name %></td> 
+                <td><%= puppers[i].breed %></td>
+                <td><a href="/pupper/edit/<%= puppers[i]._id %>">Edit</a>
+                <form action="/pupper/destroy/<%= puppers[i]._id %>" method='post' >
+                    <input type='submit' value='Delete'>
+                </form>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+
+</table>
