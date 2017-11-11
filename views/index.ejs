@@ -14,6 +14,7 @@
 
     td {
         padding-left: 2%;
+        margin-right: 5%;
     }
     a {
         display: inline-block;
@@ -22,8 +23,22 @@
     form {
         display: inline-block;
     }
+
+    button {
+     background:none!important;
+     color:blue;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     border-bottom:1px solid blue; 
+     cursor: pointer;
+}
 </style>
 <table>
+    <col width="100">
+    <col width="100">
+    <col width="100">
     <thead>
         <tr>
             <th>Name</th>
@@ -38,7 +53,7 @@
                 <td><%= puppers[i].breed %></td>
                 <td><a href="/pupper/edit/<%= puppers[i]._id %>">Edit</a>
                 <form action="/pupper/destroy/<%= puppers[i]._id %>" method='post' >
-                    <input type='submit' value='Delete'>
+                    <button type='submit'>Delete</button>
                 </form>
                 </td>
             </tr>
